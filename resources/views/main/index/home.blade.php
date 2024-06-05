@@ -21,7 +21,7 @@
                         <div class="owl-carousel service-card-prb">
 
                             @foreach($slides as $title => $image)
-                                <x-slider-item image="{{ $image }}">
+                                <x-slider-item image="{{ asset($image) }}">
                                     {{ $title }}
                                 </x-slider-item>
                             @endforeach
