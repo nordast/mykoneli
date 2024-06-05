@@ -1,12 +1,3 @@
-@php
-    $sliders = [
-        'HighLoad' => 'images/service/home-slider-1.webp',
-        'Big Data' => 'images/service/home-slider-2.webp',
-        'AI'       => 'images/service/home-slider-3.webp',
-        'DevOps'   => 'images/service/home-slider-4.webp',
-    ];
-@endphp
-
 <section class="digitalagency20" id="home">
     <div class="appboxheroscroll">
         <img src="{{ asset('images/shape/shape-a.png') }}" class="appbox nxhs1" alt="icon" data-rellax-speed="4">
@@ -29,7 +20,7 @@
                     <div class="hero-service-cards wow fadeInRight" data-wow-duration="2s">
                         <div class="owl-carousel service-card-prb">
 
-                            @foreach($sliders as $title => $image)
+                            @foreach($slides as $title => $image)
                                 <x-slider-item image="{{ $image }}">
                                     {{ $title }}
                                 </x-slider-item>
