@@ -1,0 +1,71 @@
+.btn:focus {
+    box-shadow: 0 10px 15px #af005733;
+}
+
+.form-block {
+    input, textarea {
+        margin: 0;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-text {
+        font-size: 13px;
+    }
+}
+
+.help-block.with-errors {
+    margin: -10px 0 10px 0;
+    font-size: 12px;
+    position: relative;
+    bottom: unset;
+}
+
+.main-header.menu-white {
+    .custom-nav .nav-list li a.menu-links {
+        color: #050748;
+    }
+
+    .mega-white-logo {
+        display: none;
+    }
+
+    .mega-darks-logo {
+        display: inline-block;
+    }
+}
+
+.main-header.menu-white .custom-nav .nav-list li a.menu-links {
+    color: #050748;
+}
+
+.entry-blog-post span {
+    color: #fff;
+    font-size: 14px;
+}
+
+.single-blog-info- {
+    color: #6a6a8e;
+}
+
+.breadcrumb-area .bread-menu li span {
+    color: #6a6a8e;
+    font-size: 16px;
+    font-weight: 400;
+    padding-right: 6px;
+    display: inline-block;
+}
+
+.recent-post .media div:first-child {
+    flex-shrink: unset;
+}
+
+.layer-div::before {
+    background: unset;
+}
+
+.owl-carousel .owl-item img {
+    margin-top: 10px;
+}
