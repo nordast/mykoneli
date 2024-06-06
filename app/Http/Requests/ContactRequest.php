@@ -19,7 +19,7 @@ class ContactRequest extends FormRequest
         ];
 
         if (app()->environment('production')) {
-            $rules['g-recaptcha-response'] =['required', new ReCaptcha('submitContact', 0.7)];
+            $rules['g-recaptcha-response'] = ['required', new ReCaptcha('submitContact', 0.7)];
         }
 
         return $rules;

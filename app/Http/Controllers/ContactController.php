@@ -10,8 +10,7 @@ class ContactController extends Controller
 {
     public function store(ContactRequest $request): RedirectResponse
     {
-        $data = $request->validated();
-        Contact::create($data);
-        return redirect()->route('success');
+        Contact::create($request->validated());
+        return to_route('success');
     }
 }
