@@ -1,3 +1,7 @@
+@php
+    /** @var \App\Models\Calculator $calculator */
+@endphp
+
 <section>
     <div class="container">
         <div class="row">
@@ -68,7 +72,7 @@
                                 </p>
 
                                 <div class="text-center">
-                                    <a href="{{ route('main', ['key' => 'gQZe0n7SrjkC']) . '#contact' }}" class="btn-outline lnk mt30">
+                                    <a href="{{ route('main', ['key' => $calculator->key]) . '#contact' }}" class="btn-outline lnk mt30">
                                         Order This Project <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span>
                                     </a>
                                 </div>

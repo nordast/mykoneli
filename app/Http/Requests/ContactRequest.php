@@ -16,7 +16,7 @@ class ContactRequest extends FormRequest
             'email'   => ['required', 'email', 'max:100'],
             'subject' => ['required', 'string', 'max:100'],
             'content' => ['required', 'string', 'max:1000'],
-            'key'     => ['nullable', 'string', 'max:255'],
+            'key'     => ['nullable', 'string', 'max:12'],
         ];
 
         if (app()->environment('production')) {

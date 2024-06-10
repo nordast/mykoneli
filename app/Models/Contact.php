@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $email
  * @property string $subject
  * @property string $content
- * @property string $key
+ * @property string|null $key
  */
 class Contact extends Model
 {

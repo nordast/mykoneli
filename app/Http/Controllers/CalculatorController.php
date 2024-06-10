@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Calculator;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -17,8 +18,12 @@ class CalculatorController extends Controller
         //
     }
 
-    public function show(string $id)
+    /**
+     * @throws \JsonException
+     */
+    public function show(Calculator $calculator): View
     {
-        return view('calculator.show');
+        return view('calculator.show', compact('calculator'));
     }
+
 }
