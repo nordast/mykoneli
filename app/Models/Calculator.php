@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 /**
  * @property int $id
@@ -30,4 +31,16 @@ class Calculator extends Model
     protected $primaryKey = 'key';
     public $incrementing = false;
     protected $keyType = 'string';
+
+    protected $fillable = [
+        'name',
+        'description',
+    ];
+
+    protected static function booted(): void
+    {
+        static::creating(function (Calculator $calculator) {
+            $calculator->key = Str::random(12);;
+        });
+    }
 }
