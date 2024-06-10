@@ -38,6 +38,7 @@ cp .env.local .env
 
 - [Laravel Documentation](https://laravel.com/docs)
 - [Filament Documentation](https://filamentphp.com/docs)
+- [Heroicon](https://heroicons.com/)
 - [Configuring A Shell Alias](https://laravel.com/docs/11.x/sail#configuring-a-shell-alias)
 
 ## Useful Commands

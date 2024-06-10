@@ -8,7 +8,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
+use Filament\Support\Enums\MaxWidth;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -28,7 +28,7 @@ class BackendPanelProvider extends PanelProvider
             ->path('backend')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => '#4099ff',
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -38,7 +38,7 @@ class BackendPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+//                Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -53,6 +53,11 @@ class BackendPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->brandLogo(asset('images/logo.png'))
+            ->darkMode(false)
+            ->sidebarWidth('15rem')
+            ->maxContentWidth(MaxWidth::Full)
+            ->viteTheme('resources/css/filament/backend/theme.css');
     }
 }
