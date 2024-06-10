@@ -1,14 +1,5 @@
 <x-form action="{{ route('contact.store') }}" method="POST" id="contactForm">
-
-    @if ($errors->any())
-        <div class="alert alert-danger" role="alert">
-            <ul class="mb-0 mt-0">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <input type="hidden" name="key" value="{{old('key') ?: request()->query('key')}}">
 
     <div class="row">
         <div class="form-group col-sm-6">

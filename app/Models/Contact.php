@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $email
  * @property string $subject
  * @property string $content
+ * @property string $key
  */
 class Contact extends Model
 {
@@ -18,6 +19,7 @@ class Contact extends Model
         'email',
         'subject',
         'content',
+        'key',
     ];
 
     protected static function booted(): void

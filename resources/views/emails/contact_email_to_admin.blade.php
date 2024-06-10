@@ -6,10 +6,12 @@
 
 @section('content')
     {{ $contact->content }}
-{{--
+
     @isset($contact->key)
         <br /><br />
-        <a href="{{ route('calculator.show', ['calculator' => $contact->key]) }}"></a>
+        AI Cost Calculator Details:
+        <a href="{{ route('calculator.show', ['calculator' => $contact->key]) }}">
+            {{ route('calculator.show', ['calculator' => $contact->key]) }}
+        </a>
     @endisset
---}}
 @endsection
