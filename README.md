@@ -36,6 +36,8 @@ cp .env.local .env
 - Mailpit http://localhost:8025/
 
 
+- [Laravel Documentation](https://laravel.com/docs)
+- [Filament Documentation](https://filamentphp.com/docs)
 - [Configuring A Shell Alias](https://laravel.com/docs/11.x/sail#configuring-a-shell-alias)
 
 ## Useful Commands
@@ -65,10 +67,3 @@ Build and version the assets for production:
 ```
 sail npm run build
 ```
-
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs).
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
