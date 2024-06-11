@@ -1,0 +1,226 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-pII-bch_.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/filament/backend/theme.css": {
+    "file": "assets/theme-r7YH86G8.css",
+    "src": "resources/css/filament/backend/theme.css",
+    "isEntry": true
+  },
+  "resources/images/banner/2.jpg": {
+    "file": "assets/2-EkN1POgx.jpg",
+    "src": "resources/images/banner/2.jpg"
+  },
+  "resources/images/banner/4.jpg": {
+    "file": "assets/4-m2Bn0DXt.jpg",
+    "src": "resources/images/banner/4.jpg"
+  },
+  "resources/images/banner/5.jpg": {
+    "file": "assets/5-DcHBECxk.jpg",
+    "src": "resources/images/banner/5.jpg"
+  },
+  "resources/images/banner/6.jpg": {
+    "file": "assets/6-flTT0B1C.jpg",
+    "src": "resources/images/banner/6.jpg"
+  },
+  "resources/images/banner/7.jpg": {
+    "file": "assets/7-B7yHo3jV.jpg",
+    "src": "resources/images/banner/7.jpg"
+  },
+  "resources/images/banner/banner-shap-2.png": {
+    "file": "assets/banner-shap-2-up3M7O83.png",
+    "src": "resources/images/banner/banner-shap-2.png"
+  },
+  "resources/images/hero/banner-shap-2.png": {
+    "file": "assets/banner-shap-2-up3M7O83.png",
+    "src": "resources/images/banner/banner-shap-2.png"
+  },
+  "resources/images/hero/bg-gradient.jpg": {
+    "file": "assets/bg-gradient-DX9bKMpq.jpg",
+    "src": "resources/images/hero/bg-gradient.jpg"
+  },
+  "resources/images/hero/freelancer.png": {
+    "file": "assets/freelancer-Ce9xka6z.png",
+    "src": "resources/images/hero/freelancer.png"
+  },
+  "resources/images/hero/wave-hero.svg": {
+    "file": "assets/wave-hero-CpQOFJi9.svg",
+    "src": "resources/images/hero/wave-hero.svg"
+  },
+  "resources/images/icons/404.svg": {
+    "file": "assets/404-BkuYUNfy.svg",
+    "src": "resources/images/icons/404.svg"
+  },
+  "resources/images/icons/moon.svg": {
+    "file": "assets/moon-CgccCQgl.svg",
+    "src": "resources/images/icons/moon.svg"
+  },
+  "resources/images/icons/sun.svg": {
+    "file": "assets/sun-iS9nO5FZ.svg",
+    "src": "resources/images/icons/sun.svg"
+  },
+  "resources/images/icons/up-arrow.svg": {
+    "file": "assets/up-arrow-BnoZNtqD.svg",
+    "src": "resources/images/icons/up-arrow.svg"
+  },
+  "resources/images/service/service-img-1.png": {
+    "file": "assets/service-img-1-DNUm8c4K.png",
+    "src": "resources/images/service/service-img-1.png"
+  },
+  "resources/images/service/service-img-2.png": {
+    "file": "assets/service-img-2-DYcoCVjo.png",
+    "src": "resources/images/service/service-img-2.png"
+  },
+  "resources/images/service/service-img-3.png": {
+    "file": "assets/service-img-3-cY4YohC2.png",
+    "src": "resources/images/service/service-img-3.png"
+  },
+  "resources/images/service/service-img-4.png": {
+    "file": "assets/service-img-4-QgRsju_H.png",
+    "src": "resources/images/service/service-img-4.png"
+  },
+  "resources/images/shape/bg-glass.jpg": {
+    "file": "assets/bg-glass-C971-0Fn.jpg",
+    "src": "resources/images/shape/bg-glass.jpg"
+  },
+  "resources/images/shape/bg-gradient.jpg": {
+    "file": "assets/bg-gradient-CNtS4sGe.jpg",
+    "src": "resources/images/shape/bg-gradient.jpg"
+  },
+  "resources/images/shape/bg-light2.png": {
+    "file": "assets/bg-light2-CkN6hPvf.png",
+    "src": "resources/images/shape/bg-light2.png"
+  },
+  "resources/images/shape/bg-rectangles-.png": {
+    "file": "assets/bg-rectangles--CIRTcypq.png",
+    "src": "resources/images/shape/bg-rectangles-.png"
+  },
+  "resources/images/shape/dot-pattern.png": {
+    "file": "assets/dot-pattern-go_od1t-.png",
+    "src": "resources/images/shape/dot-pattern.png"
+  },
+  "resources/images/shape/dot-shape.png": {
+    "file": "assets/dot-shape-CIPm4aaR.png",
+    "src": "resources/images/shape/dot-shape.png"
+  },
+  "resources/images/shape/dot_bg.png": {
+    "file": "assets/dot_bg-BQQjMtyj.png",
+    "src": "resources/images/shape/dot_bg.png"
+  },
+  "resources/images/shape/hero-shape.svg": {
+    "file": "assets/hero-shape-Bryk0MJv.svg",
+    "src": "resources/images/shape/hero-shape.svg"
+  },
+  "resources/images/shape/shape-1.png": {
+    "file": "assets/shape-1-CMB7hQXF.png",
+    "src": "resources/images/shape/shape-1.png"
+  },
+  "resources/images/shape/shape-1.svg": {
+    "file": "assets/shape-1-Kp2DXSbB.svg",
+    "src": "resources/images/shape/shape-1.svg"
+  },
+  "resources/images/shape/shape-12.svg": {
+    "file": "assets/shape-12-BCHV83WV.svg",
+    "src": "resources/images/shape/shape-12.svg"
+  },
+  "resources/images/shape/shape-2.png": {
+    "file": "assets/shape-2-fA7N_QsR.png",
+    "src": "resources/images/shape/shape-2.png"
+  },
+  "resources/images/shape/shape-2.svg": {
+    "file": "assets/shape-2-C1sToIO5.svg",
+    "src": "resources/images/shape/shape-2.svg"
+  },
+  "resources/images/shape/shape-7.svg": {
+    "file": "assets/shape-7-DidfHdMM.svg",
+    "src": "resources/images/shape/shape-7.svg"
+  },
+  "resources/images/shape/shape-9.svg": {
+    "file": "assets/shape-9-C99MF73W.svg",
+    "src": "resources/images/shape/shape-9.svg"
+  },
+  "resources/images/shape/shape-f.png": {
+    "file": "assets/shape-f-Bc0JP6m1.png",
+    "src": "resources/images/shape/shape-f.png"
+  },
+  "resources/images/shape/stars.svg": {
+    "file": "assets/stars-BXRSV8AZ.svg",
+    "src": "resources/images/shape/stars.svg"
+  },
+  "resources/images/shape/tt-work-bg.jpg": {
+    "file": "assets/tt-work-bg-BcJBbhWa.jpg",
+    "src": "resources/images/shape/tt-work-bg.jpg"
+  },
+  "resources/images/shape/wave-bg.png": {
+    "file": "assets/wave-bg-DYzuCY7U.png",
+    "src": "resources/images/shape/wave-bg.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BlDZrKu1.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/webfonts/fa-brands-400.eot": {
+    "file": "assets/fa-brands-400-CWfv7Q-8.eot",
+    "src": "resources/webfonts/fa-brands-400.eot"
+  },
+  "resources/webfonts/fa-brands-400.svg": {
+    "file": "assets/fa-brands-400-B7a24m7v.svg",
+    "src": "resources/webfonts/fa-brands-400.svg"
+  },
+  "resources/webfonts/fa-brands-400.ttf": {
+    "file": "assets/fa-brands-400-CshCaLwF.ttf",
+    "src": "resources/webfonts/fa-brands-400.ttf"
+  },
+  "resources/webfonts/fa-brands-400.woff": {
+    "file": "assets/fa-brands-400-C-v2DD_t.woff",
+    "src": "resources/webfonts/fa-brands-400.woff"
+  },
+  "resources/webfonts/fa-brands-400.woff2": {
+    "file": "assets/fa-brands-400-BzrN6Sif.woff2",
+    "src": "resources/webfonts/fa-brands-400.woff2"
+  },
+  "resources/webfonts/fa-regular-400.eot": {
+    "file": "assets/fa-regular-400-DvSZaKEv.eot",
+    "src": "resources/webfonts/fa-regular-400.eot"
+  },
+  "resources/webfonts/fa-regular-400.svg": {
+    "file": "assets/fa-regular-400-4AtKni-7.svg",
+    "src": "resources/webfonts/fa-regular-400.svg"
+  },
+  "resources/webfonts/fa-regular-400.ttf": {
+    "file": "assets/fa-regular-400-ZfGRyHeM.ttf",
+    "src": "resources/webfonts/fa-regular-400.ttf"
+  },
+  "resources/webfonts/fa-regular-400.woff": {
+    "file": "assets/fa-regular-400-frskbdMR.woff",
+    "src": "resources/webfonts/fa-regular-400.woff"
+  },
+  "resources/webfonts/fa-regular-400.woff2": {
+    "file": "assets/fa-regular-400-BoaOhnHW.woff2",
+    "src": "resources/webfonts/fa-regular-400.woff2"
+  },
+  "resources/webfonts/fa-solid-900.eot": {
+    "file": "assets/fa-solid-900-CTNkttaO.eot",
+    "src": "resources/webfonts/fa-solid-900.eot"
+  },
+  "resources/webfonts/fa-solid-900.svg": {
+    "file": "assets/fa-solid-900-DqxoqY8u.svg",
+    "src": "resources/webfonts/fa-solid-900.svg"
+  },
+  "resources/webfonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900-CXAnREQg.ttf",
+    "src": "resources/webfonts/fa-solid-900.ttf"
+  },
+  "resources/webfonts/fa-solid-900.woff": {
+    "file": "assets/fa-solid-900-CSzk2abE.woff",
+    "src": "resources/webfonts/fa-solid-900.woff"
+  },
+  "resources/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900-_5MqxTsL.woff2",
+    "src": "resources/webfonts/fa-solid-900.woff2"
+  }
+}
