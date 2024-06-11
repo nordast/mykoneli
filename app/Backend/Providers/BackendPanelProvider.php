@@ -1,14 +1,18 @@
 <?php
 
-namespace App\Providers\Filament;
+namespace App\Backend\Providers;
 
+use Filament\Forms\Components\DatePicker;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Infolists\Components\TextEntry;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Enums\MaxWidth;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -30,12 +34,14 @@ class BackendPanelProvider extends PanelProvider
             ->colors([
                 'primary' => '#4099ff',
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->font('Roboto')
+            ->favicon(asset('images/favicon.png'))
+            ->discoverResources(in: app_path('Backend/Resources'), for: 'App\\Backend\\Resources')
+            ->discoverPages(in: app_path('Backend/Pages'), for: 'App\\Backend\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Backend/Widgets'), for: 'App\\Backend\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
 //                Widgets\FilamentInfoWidget::class,
@@ -57,7 +63,37 @@ class BackendPanelProvider extends PanelProvider
             ->brandLogo(asset('images/logo.png'))
             ->darkMode(false)
             ->sidebarWidth('15rem')
+            ->sidebarCollapsibleOnDesktop()
+            ->collapsedSidebarWidth('3rem')
             ->maxContentWidth(MaxWidth::Full)
             ->viteTheme('resources/css/filament/backend/theme.css');
+    }
+
+    public function boot(): void
+    {
+        Table::configureUsing(function (Table $table): void {
+            $table
+                ->defaultSort('id', 'DESC')
+                ->striped()
+                ->paginated([10, 20, 50])
+                ->defaultPaginationPageOption(20);
+
+            $table::$defaultDateTimeDisplayFormat = 'Y-m-d H:i:s';
+            $table::$defaultDateDisplayFormat = 'Y-m-d';
+        });
+
+        DatePicker::configureUsing(function (DatePicker $obj): void {
+            $obj
+                ->native(false)
+                ->displayFormat('Y-m-d');
+        });
+
+        TextColumn::configureUsing(function (TextColumn $obj): void {
+            $obj->default('-');
+        });
+
+        TextEntry::configureUsing(function (TextEntry $obj): void {
+            $obj->default('-');
+        });
     }
 }

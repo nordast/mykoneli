@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\ContactResource\Pages;
+namespace App\Backend\Resources\ContactResource\Pages;
 
-use App\Filament\Resources\ContactResource;
-use Filament\Actions;
+use App\Backend\Resources\ContactResource;
 use Filament\Resources\Pages\ListRecords;
 
 class ListContacts extends ListRecords
@@ -13,7 +12,7 @@ class ListContacts extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            //
         ];
     }
 }

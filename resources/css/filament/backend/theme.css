@@ -10,6 +10,10 @@ body {
     background-color: #263544 !important;
 }
 
+.fi-sidebar:not(.fi-sidebar-open) {
+    width: var(--collapsed-sidebar-width);
+}
+
 .fi-sidebar-nav {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -43,3 +47,21 @@ body {
 .fi-sidebar-item.fi-active .fi-sidebar-item-button span, .fi-sidebar-item.fi-active .fi-sidebar-item-button svg {
     color: #fff !important;
 }
+
+.fi-sidebar-group-button span, .fi-sidebar-group-button svg {
+    color: #b7c0cd !important;
+}
+
+/*
+.fi-in-entry-wrp > .grid {
+    display: flex !important;
+}
+
+.fi-in-entry-wrp > .grid > div:first-of-type {
+    margin-right: 5px;
+}
+
+.fi-in-entry-wrp > .grid > div:first-of-type:after {
+    content: ":";
+}
+*/

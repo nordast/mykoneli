@@ -68,3 +68,8 @@ Build and version the assets for production:
 ```
 sail npm run build
 ```
+
+Make resource for Filament:
+```
+sail artisan make:filament-resource User --generate --view --soft-deletes
+```
