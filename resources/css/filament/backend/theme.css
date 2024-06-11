@@ -52,16 +52,6 @@ body {
     color: #b7c0cd !important;
 }
 
-/*
-.fi-in-entry-wrp > .grid {
-    display: flex !important;
+.fi-fo-component-ctn {
+    gap: 1rem !important;
 }
-
-.fi-in-entry-wrp > .grid > div:first-of-type {
-    margin-right: 5px;
-}
-
-.fi-in-entry-wrp > .grid > div:first-of-type:after {
-    content: ":";
-}
-*/

@@ -6,6 +6,7 @@ use App\Backend\Resources\ContactResource\Pages;
 use App\Models\Contact;
 use Carbon\Carbon;
 use Filament\Forms\Components\DatePicker;
+use Filament\Infolists\Components\Grid;
 use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
@@ -54,8 +55,8 @@ class ContactResource extends Resource
             ->filters([
                 Filter::make('created_at')
                     ->form([
-                        DatePicker::make('created_from'),
-                        DatePicker::make('created_until'),
+                        DatePicker::make('created_from')->maxDate(now()),
+                        DatePicker::make('created_until')->maxDate(now()),
                     ])
                     ->indicateUsing(function (array $data): array {
                         $indicators = [];
@@ -97,11 +98,15 @@ class ContactResource extends Resource
                     TextEntry::make('name'),
                     TextEntry::make('email'),
                     TextEntry::make('subject'),
-                    TextEntry::make('content'),
                     TextEntry::make('key'),
                     TextEntry::make('created_at'),
                     TextEntry::make('updated_at'),
-                ])
+                ]),
+                Section::make('Content')->schema([
+                    TextEntry::make('content')
+                        ->prose()
+                        ->hiddenLabel(),
+                ])->collapsible(),
             ])->columns(1);
     }
 

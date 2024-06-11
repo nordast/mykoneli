@@ -93,7 +93,7 @@ class BackendPanelProvider extends PanelProvider
         });
 
         TextEntry::configureUsing(function (TextEntry $obj): void {
-            $obj->default('-');
+            $obj->default('-')->inlineLabel();
         });
     }
 }
