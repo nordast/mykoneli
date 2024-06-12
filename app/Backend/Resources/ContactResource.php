@@ -2,18 +2,14 @@
 
 namespace App\Backend\Resources;
 
+use App\Backend\Filters\DateFilter;
 use App\Backend\Resources\ContactResource\Pages;
 use App\Models\Contact;
-use Carbon\Carbon;
-use Filament\Forms\Components\DatePicker;
-use Filament\Infolists\Components\Grid;
 use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Filters\Filter;
-use Filament\Tables\Filters\Indicator;
 use Filament\Tables\Table;
 use Filament\Infolists\Infolist;
 
@@ -30,49 +26,37 @@ class ContactResource extends Resource
                 TextColumn::make('id')
                     ->numeric()
                     ->sortable()
+                    ->searchable()
                     ->toggleable(),
+
                 TextColumn::make('name')
                     ->sortable()
                     ->searchable(),
+
                 TextColumn::make('email')
                     ->sortable()
                     ->searchable(),
+
                 TextColumn::make('subject')
                     ->searchable()
                     ->toggleable(),
+
                 TextColumn::make('key')
                     ->searchable()
                     ->toggleable(),
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(),
+
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                Filter::make('created_at')
-                    ->form([
-                        DatePicker::make('created_from')->maxDate(now()),
-                        DatePicker::make('created_until')->maxDate(now()),
-                    ])
-                    ->indicateUsing(function (array $data): array {
-                        $indicators = [];
-
-                        if ($data['created_from'] ?? null) {
-                            $indicators[] = Indicator::make('Created From ' . Carbon::parse($data['created_from'])->toDateString())
-                                ->removeField('created_from');
-                        }
-
-                        if ($data['created_until'] ?? null) {
-                            $indicators[] = Indicator::make('Created Until ' . Carbon::parse($data['created_until'])->toDateString())
-                                ->removeField('created_until');
-                        }
-
-                        return $indicators;
-                    }),
+                DateFilter::make('created_at')
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
@@ -102,6 +86,7 @@ class ContactResource extends Resource
                     TextEntry::make('created_at'),
                     TextEntry::make('updated_at'),
                 ]),
+
                 Section::make('Content')->schema([
                     TextEntry::make('content')
                         ->prose()

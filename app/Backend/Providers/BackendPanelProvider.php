@@ -89,11 +89,11 @@ class BackendPanelProvider extends PanelProvider
         });
 
         TextColumn::configureUsing(function (TextColumn $obj): void {
-            $obj->default('-');
+            $obj->placeholder('-');
         });
 
         TextEntry::configureUsing(function (TextEntry $obj): void {
-            $obj->default('-')->inlineLabel();
+            $obj->placeholder('-')->inlineLabel();
         });
     }
 }

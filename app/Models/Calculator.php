@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 /**
@@ -27,6 +28,14 @@ class Calculator extends Model
 {
     use HasFactory;
 
+    const STATUS_NEW            = 0;
+    const STATUS_ACTIVE         = 1;
+    const STATUS_PRIVATE        = 2;
+    const STATUS_DELETED        = 3;
+
+    const IS_SPAM_NO            = 0;
+    const IS_SPAM_YES           = 1;
+
     protected $table = 'calculator';
     protected $primaryKey = 'key';
     public $incrementing = false;
@@ -40,7 +49,29 @@ class Calculator extends Model
     protected static function booted(): void
     {
         static::creating(function (Calculator $calculator) {
-            $calculator->key = Str::random(12);;
+            $calculator->key = Str::random(12);
         });
+    }
+
+    public static function getStatuses(int $key = null): array|string
+    {
+        $result = [
+            self::STATUS_NEW      => __('New'),
+            self::STATUS_ACTIVE   => __('Active'),
+            self::STATUS_PRIVATE  => __('Private'),
+            self::STATUS_DELETED  => __('Deleted'),
+        ];
+
+        return !is_null($key) ? Arr::get($result, $key) : $result;
+    }
+
+    public static function isSpam(int $key = null): array|string
+    {
+        $result = [
+            self::IS_SPAM_NO    => __('No'),
+            self::IS_SPAM_YES   => __('Yes'),
+        ];
+
+        return !is_null($key) ? Arr::get($result, $key) : $result;
     }
 }
