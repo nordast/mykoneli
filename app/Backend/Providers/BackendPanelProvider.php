@@ -2,6 +2,7 @@
 
 namespace App\Backend\Providers;
 
+use App\Backend\Pages\EditProfile;
 use Filament\Forms\Components\DatePicker;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -31,6 +32,7 @@ class BackendPanelProvider extends PanelProvider
             ->id('backend')
             ->path('backend')
             ->login()
+            ->profile(EditProfile::class)
             ->colors([
                 'primary' => '#4099ff',
             ])
@@ -43,7 +45,7 @@ class BackendPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Backend/Widgets'), for: 'App\\Backend\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
+//                Widgets\AccountWidget::class,
 //                Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
