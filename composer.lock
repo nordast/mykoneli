@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9660ca6ba6082fa60c648c2a109f46b",
+    "content-hash": "453f53bfafae122ef9221c1d103dc8f4",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -350,6 +350,85 @@
                 }
             ],
             "time": "2023-12-11T17:09:12+00:00"
+        },
+        {
+            "name": "codebar-ag/filament-json-field",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codebar-ag/filament-json-field.git",
+                "reference": "af13ab73adda90e9b73f6af4106526ce348cb610"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codebar-ag/filament-json-field/zipball/af13ab73adda90e9b73f6af4106526ce348cb610",
+                "reference": "af13ab73adda90e9b73f6af4106526ce348cb610",
+                "shasum": ""
+            },
+            "require": {
+                "filament/infolists": "^3.2",
+                "filament/support": "^3.2",
+                "filament/tables": "^3.2",
+                "illuminate/contracts": "^10.0||^11.0",
+                "livewire/livewire": "^3.4",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.9",
+                "laravel/pint": "^1.14",
+                "nunomaduro/collision": "^8.1.1||^7.10.0",
+                "orchestra/testbench": "^9.0.0||^8.22.0",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-arch": "^2.7",
+                "pestphp/pest-plugin-laravel": "^2.3",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.3",
+                "spatie/laravel-ray": "^1.35"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CodebarAg\\FilamentJsonField\\FilamentJsonFieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CodebarAg\\FilamentJsonField\\": "src/",
+                    "CodebarAg\\FilamentJsonField\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bürgin",
+                    "email": "sebastian.fix@buergin.ch",
+                    "homepage": "https://www.codebar.ch",
+                    "role": "Sofware-Engineer"
+                },
+                {
+                    "name": "Rhys Lees",
+                    "role": "Software-Developer"
+                }
+            ],
+            "description": "This is my package filament-json-field",
+            "homepage": "https://github.com/codebar-ag/filament-json-field",
+            "keywords": [
+                "CodebarAg",
+                "filament-json-field",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/codebar-ag/filament-json-field/issues",
+                "source": "https://github.com/codebar-ag/filament-json-field/tree/v1.4.0"
+            },
+            "time": "2024-03-26T17:15:41+00:00"
         },
         {
             "name": "danharrin/date-format-converter",

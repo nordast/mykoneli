@@ -5,6 +5,7 @@ namespace App\Backend\Resources;
 use App\Backend\Filters\DateFilter;
 use App\Backend\Resources\CalculatorResource\Pages;
 use App\Models\Calculator;
+use CodebarAg\FilamentJsonField\Infolists\Components\JsonEntry;
 use Filament\Infolists\Components\Section;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
@@ -146,9 +147,15 @@ class CalculatorResource extends Resource
                         ->color(fn(int $state): string => Arr::get(self::$isSpamColors, $state))
                         ->badge(),
 
-                    TextEntry::make('likes')->numeric(),
-                    TextEntry::make('dislikes')->numeric(),
-                    TextEntry::make('rating')->numeric(),
+                    TextEntry::make('likes')
+                        ->numeric(),
+
+                    TextEntry::make('dislikes')
+                        ->numeric(),
+
+                    TextEntry::make('rating')
+                        ->numeric(),
+
                     TextEntry::make('created_at'),
                     TextEntry::make('updated_at'),
                 ]),
@@ -160,7 +167,7 @@ class CalculatorResource extends Resource
                 ])->collapsible(),
 
                 Section::make('Answer')->schema([
-                    TextEntry::make('answer')
+                    JsonEntry::make('answer')
                         ->hiddenLabel(),
                 ])->collapsible(),
 

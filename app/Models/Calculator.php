@@ -51,6 +51,10 @@ class Calculator extends Model
         static::creating(function (Calculator $calculator) {
             $calculator->key = Str::random(12);
         });
+
+        static::retrieved(function (Calculator $calculator) {
+            $calculator->answer = json_decode($calculator->answer, true);
+        });
     }
 
     public static function getStatuses(int $key = null): array|string
