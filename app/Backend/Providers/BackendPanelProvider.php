@@ -4,6 +4,7 @@ namespace App\Backend\Providers;
 
 use App\Backend\Pages\EditProfile;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TextInput;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -96,6 +97,10 @@ class BackendPanelProvider extends PanelProvider
 
         TextEntry::configureUsing(function (TextEntry $obj): void {
             $obj->placeholder('-')->inlineLabel();
+        });
+
+        TextInput::configureUsing(function (TextInput $obj): void {
+            $obj->inlineLabel();
         });
     }
 }
