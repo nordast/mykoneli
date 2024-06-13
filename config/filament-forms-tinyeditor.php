@@ -14,7 +14,7 @@ return [
 
         'default' => [
             'plugins' => 'advlist autoresize codesample directionality emoticons fullscreen hr image imagetools link lists media table toc wordcount',
-            'toolbar' => 'fullscreen undo redo removeformat | formatselect fontsizeselect | bold italic | image link media codesample | alignjustify alignright aligncenter alignleft | blockquote table hr | numlist bullist | forecolor backcolor',
+            'toolbar' => 'fullscreen undo redo removeformat | formatselect fontsizeselect | bold italic | image link media codesample table | alignjustify alignright aligncenter alignleft | blockquote hr | numlist bullist | forecolor backcolor',
             'upload_directory' => null,
         ],
 

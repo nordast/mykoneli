@@ -125,7 +125,9 @@ class BackendPanelProvider extends PanelProvider
         });
 
         TinyEditor::configureUsing(function (TinyEditor $obj): void {
-            $obj->inlineLabel();
+            $obj
+                ->toolbarSticky(true)
+                ->inlineLabel();
         });
     }
 }
