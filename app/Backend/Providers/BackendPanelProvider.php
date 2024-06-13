@@ -4,6 +4,10 @@ namespace App\Backend\Providers;
 
 use App\Backend\Pages\EditProfile;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TagsInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -23,6 +27,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class BackendPanelProvider extends PanelProvider
 {
@@ -100,6 +105,26 @@ class BackendPanelProvider extends PanelProvider
         });
 
         TextInput::configureUsing(function (TextInput $obj): void {
+            $obj->inlineLabel();
+        });
+
+        FileUpload::configureUsing(function (FileUpload $obj): void {
+            $obj->inlineLabel();
+        });
+
+        Textarea::configureUsing(function (Textarea $obj): void {
+            $obj->inlineLabel();
+        });
+
+        Select::configureUsing(function (Select $obj): void {
+            $obj->inlineLabel()->native(false);
+        });
+
+        TagsInput::configureUsing(function (TagsInput $obj): void {
+            $obj->inlineLabel();
+        });
+
+        TinyEditor::configureUsing(function (TinyEditor $obj): void {
             $obj->inlineLabel();
         });
     }
