@@ -23,7 +23,7 @@ cp .env.local .env
 ./vendor/bin/sail artisan migrate
 ```
 
-6) Seed the database with records (if you want):
+6) \[Optional\] Seed the database with records:
 ```
 ./vendor/bin/sail artisan db:seed
 ```
