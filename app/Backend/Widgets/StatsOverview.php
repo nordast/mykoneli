@@ -17,7 +17,7 @@ class StatsOverview extends BaseWidget
         return [
             Stat::make('Contacts', Contact::count())
                 ->url(route('filament.backend.resources.contacts.index'))
-                ->icon('heroicon-o-chat-bubble-bottom-center-text'),
+                ->icon('heroicon-o-envelope'),
 
             Stat::make('Posts', Post::count())
                 ->url(route('filament.backend.resources.posts.index'))
