@@ -5,6 +5,12 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/login', function () {
+    return '';
+})->name('login');
+
+Route::redirect('/login', '/backend/login');
+
 Route::view('/', 'main.index')->name('main');
 Route::view('/success', 'main.success')->name('success');
 

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -26,8 +25,6 @@ use Illuminate\Support\Str;
  */
 class Calculator extends Model
 {
-    use HasFactory;
-
     const STATUS_NEW            = 0;
     const STATUS_ACTIVE         = 1;
     const STATUS_PRIVATE        = 2;

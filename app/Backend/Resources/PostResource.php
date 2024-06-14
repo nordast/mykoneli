@@ -11,14 +11,19 @@ use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
-use Filament\Pages\Page;
-use Filament\Resources\Pages\CreateRecord;
+use Filament\Infolists\Components\ImageEntry;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use FilamentTiptapEditor\TiptapEditor;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Arr;
+use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
@@ -29,6 +34,11 @@ class PostResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     protected static ?string $navigationGroup = 'Blog';
+
+    protected static array $statusesColors = [
+        Post::STATUS_INACTIVE => 'gray',
+        Post::STATUS_ACTIVE   => 'success',
+    ];
 
     public static function form(Form $form): Form
     {
@@ -44,7 +54,7 @@ class PostResource extends Resource
                         }),
 
                     TextInput::make('slug')
-                        ->unique(fn (Page $livewire) => ($livewire instanceof CreateRecord))
+                        ->unique(ignoreRecord: true)
                         ->required()
                         ->maxLength(255),
 
@@ -56,12 +66,13 @@ class PostResource extends Resource
 
                     FileUpload::make('image')
                         ->hint("Preview Image (Best size 370x270px)")
-                        ->directory('post-previews')
                         ->image()
+                        ->directory('post-previews')
                         ->maxSize(1024)
+                        ->imageEditor()
                         ->required(),
 
-                    TinyEditor::make('text')
+                    TinyEditor::make('content')
                         ->fileAttachmentsDirectory('post-images')
                         ->required(),
 
@@ -79,21 +90,42 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('status')
+                TextColumn::make('id')
                     ->numeric()
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable(),
+
+                TextColumn::make('title')
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable(),
+
+                TextColumn::make('category.name')
+                    ->sortable()
+                    ->toggleable(),
+
+                TextColumn::make('status')
+                    ->formatStateUsing(fn (string $state): string => Post::getStatuses($state))
+                    ->color(fn(int $state): string => Arr::get(self::$statusesColors, $state))
+                    ->badge()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
+
+                ImageColumn::make('image')
+                    ->height(75)
+                    ->toggleable(isToggledHiddenByDefault: true),
+
+                TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(),
+
+                TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('deleted_at')
+
+                TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -122,13 +154,48 @@ class PostResource extends Resource
         ];
     }
 
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                Section::make()->schema([
+                    TextEntry::make('id'),
+                    TextEntry::make('title'),
+                    TextEntry::make('slug'),
+                    TextEntry::make('category.name'),
+
+                    ImageEntry::make('image')
+                        ->height(200),
+
+                    TextEntry::make('status')
+                        ->formatStateUsing(fn (string $state): string => Post::getStatuses($state))
+                        ->color(fn(int $state): string => Arr::get(self::$statusesColors, $state))
+                        ->badge(),
+
+                    TextEntry::make('tags')
+                        ->badge()
+                        ->separator(','),
+
+                    TextEntry::make('created_at'),
+                    TextEntry::make('updated_at'),
+                    TextEntry::make('deleted_at'),
+                ]),
+
+                Section::make('Content')->schema([
+                    TextEntry::make('content')
+                        ->formatStateUsing(fn (string $state): HtmlString => new HtmlString($state))
+                        ->hiddenLabel(),
+                ])->collapsible(),
+            ])->columns(1);
+    }
+
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPosts::route('/'),
+            'index'  => Pages\ListPosts::route('/'),
             'create' => Pages\CreatePost::route('/create'),
-            'view' => Pages\ViewPost::route('/{record}'),
-            'edit' => Pages\EditPost::route('/{record}/edit'),
+            'view'   => Pages\ViewPost::route('/{record}'),
+            'edit'   => Pages\EditPost::route('/{record}/edit'),
         ];
     }
 

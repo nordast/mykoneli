@@ -23,7 +23,17 @@ cp .env.local .env
 ./vendor/bin/sail artisan migrate
 ```
 
-6) Install frontend dependencies:
+6) Seed the database with records (if you want):
+```
+./vendor/bin/sail artisan db:seed
+```
+
+7) Create the symbolic links configured for the application:
+```
+./vendor/bin/sail artisan storage:link
+```
+
+8) Install frontend dependencies:
 ```
 ./vendor/bin/sail npm install
 ```

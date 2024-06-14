@@ -12,6 +12,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Pages;
 use Filament\Panel;
@@ -102,6 +103,10 @@ class BackendPanelProvider extends PanelProvider
 
         TextEntry::configureUsing(function (TextEntry $obj): void {
             $obj->placeholder('-')->inlineLabel();
+        });
+
+        ImageEntry::configureUsing(function (ImageEntry $obj): void {
+            $obj->inlineLabel();
         });
 
         TextInput::configureUsing(function (TextInput $obj): void {

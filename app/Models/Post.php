@@ -8,10 +8,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Arr;
 
+/**
+ * @property string $title
+ * @property string $slug
+ * @property int $category_id
+ * @property string $image
+ * @property string $content
+ * @property int $status
+ * @property array $tags
+ */
 class Post extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE   = 1;
@@ -20,7 +28,7 @@ class Post extends Model
         'title',
         'category_id',
         'image',
-        'text',
+        'content',
         'status',
         'tags',
         'slug',
