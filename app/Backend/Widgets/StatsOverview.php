@@ -2,6 +2,9 @@
 
 namespace App\Backend\Widgets;
 
+use App\Models\Contact;
+use App\Models\Post;
+use App\Models\User;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
@@ -12,18 +15,17 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         return [
-            Stat::make('Unique views', '192.1k')
-                ->description('32k increase')
-                ->descriptionIcon('heroicon-m-arrow-trending-up')
-                ->color('success'),
-            Stat::make('Bounce rate', '21%')
-                ->description('7% increase')
-                ->descriptionIcon('heroicon-m-arrow-trending-down')
-                ->color('danger'),
-            Stat::make('Average time on page', '3:12')
-                ->description('3% increase')
-                ->descriptionIcon('heroicon-m-arrow-trending-up')
-                ->color('success'),
+            Stat::make('Contacts', Contact::count())
+                ->url(route('filament.backend.resources.contacts.index'))
+                ->icon('heroicon-o-chat-bubble-bottom-center-text'),
+
+            Stat::make('Posts', Post::count())
+                ->url(route('filament.backend.resources.posts.index'))
+                ->icon('heroicon-o-newspaper'),
+
+            Stat::make('Users', User::count())
+                ->url(route('filament.backend.resources.users.index'))
+                ->icon('heroicon-o-users'),
         ];
     }
 }
