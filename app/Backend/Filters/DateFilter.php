@@ -9,6 +9,7 @@ use Filament\Tables\Filters\Concerns\HasColumns;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\Indicator;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
 
 class DateFilter
 {
@@ -21,8 +22,8 @@ class DateFilter
 
         return Filter::make($name)
             ->form([
-                DatePicker::make($subName . '_from')->maxDate(now())->label(ucfirst($subName) . ' From'),
-                DatePicker::make($subName . '_until')->maxDate(now())->label(ucfirst($subName) . ' Until'),
+                DatePicker::make($subName . '_from')->maxDate(now())->label(Str::ucfirst($subName) . ' From'),
+                DatePicker::make($subName . '_until')->maxDate(now())->label(Str::ucfirst($subName) . ' Until'),
             ])
             ->query(function (Builder $query, array $data) use ($name, $subName): Builder {
                 return $query
@@ -39,13 +40,13 @@ class DateFilter
                 $indicators = [];
 
                 if ($data[$subName . '_from'] ?? null) {
-                    $indicators[] = Indicator::make( ucfirst($subName) . ' From ' . Carbon::parse($data[$subName . '_from'])
+                    $indicators[] = Indicator::make( Str::ucfirst($subName) . ' From ' . Carbon::parse($data[$subName . '_from'])
                         ->toFormattedDateString())
                         ->removeField($subName . '_from');
                 }
 
                 if ($data[$subName . '_until'] ?? null) {
-                    $indicators[] = Indicator::make(ucfirst($subName) . ' Until ' . Carbon::parse($data[$subName . '_until'])
+                    $indicators[] = Indicator::make(Str::ucfirst($subName) . ' Until ' . Carbon::parse($data[$subName . '_until'])
                         ->toFormattedDateString())
                         ->removeField($subName . '_until');
                 }

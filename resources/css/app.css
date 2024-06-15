@@ -1,6 +1,7 @@
 /*@import "custom.scss";*/
 
 /* plugin-css */
+/*@import "bootstrap/scss/bootstrap.scss";*/
 @import "bootstrap.min.css";
 @import "plugin.min.css";
 @import "all.min.css";

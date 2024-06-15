@@ -2,6 +2,7 @@
 
 namespace App\Backend\Resources;
 
+use App\Backend\Filters\DateFilter;
 use App\Backend\Resources\PostResource\Pages;
 use App\Models\Post;
 use Filament\Forms;
@@ -132,6 +133,7 @@ class PostResource extends Resource
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
+                DateFilter::make('created_at'),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),

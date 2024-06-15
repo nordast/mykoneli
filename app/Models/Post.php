@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Arr;
 
 /**
+ * @property int $id
  * @property string $title
  * @property string $slug
  * @property int $category_id
@@ -16,6 +17,9 @@ use Illuminate\Support\Arr;
  * @property string $content
  * @property int $status
  * @property array $tags
+ * @property string $created_at
+ *
+ * @property Category $category
  */
 class Post extends Model
 {
