@@ -21,13 +21,24 @@ class PostFactory extends Factory
         $title = fake()->sentence();
         $date = fake()->dateTimeBetween('-1 month', now());
 
+        $tags = [
+            'voluptate',
+            'maiores',
+            'quisquam',
+            'dolor',
+            'iure',
+            'qui',
+            'est',
+            'cupiditate'
+        ];
+
         return [
             'title'       => $title,
             'slug'        => Str::slug($title),
             'category_id' => fake()->numberBetween(1, Category::count()),
             'content'     => '<p>' . fake()->paragraph() . '</p>',
             'status'      => fake()->numberBetween(0, 1),
-            'tags'        => fake()->words(),
+            'tags'        => fake()->randomElements($tags, fake()->numberBetween(2, 4)),
             'created_at'  => $date,
             'updated_at'  => $date,
         ];

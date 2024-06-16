@@ -104,3 +104,11 @@ a.isotope_item {
         background-color: rgba(67, 106, 214, 0.1);
     }
 }
+
+.post-info p {
+    color: #6a6a8e;
+}
+
+.recent-post .media div:first-child {
+    flex-shrink: 0;
+}

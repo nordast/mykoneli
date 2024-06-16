@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @property int $id
@@ -20,6 +21,7 @@ use Illuminate\Support\Arr;
  * @property string $created_at
  *
  * @property Category $category
+ * @property string $imageUrl
  */
 class Post extends Model
 {
@@ -27,6 +29,10 @@ class Post extends Model
 
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE   = 1;
+
+    protected $primaryKey = 'slug';
+    public $incrementing = false;
+    protected $keyType = 'string';
 
     protected $fillable = [
         'title',
@@ -45,6 +51,11 @@ class Post extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function getImageUrlAttribute(): string
+    {
+        return asset($this->image ? Storage::disk('public')->url($this->image) : 'images/blog_preview.jpg');
     }
 
     public static function getStatuses(int $key = null): array|string

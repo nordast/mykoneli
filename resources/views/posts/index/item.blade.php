@@ -5,7 +5,7 @@
 <div class="col-lg-4 col-sm-6 single-card-item">
     <a href="{{ route('post.show', ['post' => $post->slug]) }}" class="isotope_item hover-scale">
         <div class="item-image">
-            <img src="{{ asset($post->image ? Storage::disk('public')->url($post->image) : 'images/blog_preview.jpg') }}" alt="{{ $post->title }}" class="img-fluid">
+            <img src="{{ $post->imageUrl }}" alt="{{ $post->title }}" class="img-fluid">
         </div>
         <div class="item-info blog-info">
             <div class="entry-blog d-flex justify-content-between">
