@@ -38,7 +38,9 @@
                     <ul>
                         @foreach($postCategories as $postCategory)
                             <li>
-                                <a href="#">{{ $postCategory->category->name }} <span class="categories-number">({{ Number::abbreviate($postCategory->count) }})</span></a>
+                                <a href="{{ route('post.index', ['category_id' => $postCategory->category_id]) }}">
+                                    {{ $postCategory->category->name }} <span class="categories-number">({{ Number::abbreviate($postCategory->count) }})</span>
+                                </a>
                             </li>
                         @endforeach
                     </ul>
@@ -52,7 +54,9 @@
                 <h3 class="mb30">Most Used Tags</h3>
                 <div class="tabs">
                     @foreach($tagsTop as $tag => $count)
-                        <a href="#">{{ $tag }}</a>
+                        <a href="{{ route('post.index', ['tag' => $tag]) }}">
+                            {{ $tag }}
+                        </a>
                     @endforeach
                 </div>
             </div>

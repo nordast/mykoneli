@@ -13,7 +13,9 @@
 
         <div class="entry-blog d-flex justify-content-between">
             <div class="bypost">
-                <i class="fas fa-layer-group"></i> {{ $post->category->name }}
+                <a href="{{ route('post.index', ['category_id' => $post->category_id]) }}">
+                    <i class="fas fa-layer-group"></i> {{ $post->category->name }}
+                </a>
             </div>
             <div class="posted-on">
                 <i class="fas fa-clock"></i> {{ __date($post->created_at) }}
@@ -36,7 +38,9 @@
                     <span>Related Tags</span>
 
                     @foreach($post->tags as $tag)
-                        <a href="#">{{ $tag }}</a>
+                        <a href="{{ route('post.index', ['tag' => $tag]) }}">
+                            {{ $tag }}
+                        </a>
                     @endforeach
 
                 </div>

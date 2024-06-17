@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
@@ -13,9 +14,22 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(6);
+        $query = Post::query();
+
+        // Filter by category
+        if ($request->has('category_id')) {
+            $query->where('category_id', $request->input('category_id'));
+        }
+
+        // Filter by tag
+        if ($request->has('tag')) {
+            $query->whereJsonContains('tags', $request->input('tag'));
+        }
+
+        $posts = $query->latest()->paginate(6);
+
         return view('posts.index', compact('posts'));
     }
 
