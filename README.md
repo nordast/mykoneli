@@ -38,7 +38,7 @@ cp .env.local .env
 ./vendor/bin/sail npm install
 ```
 
-7) You can access the application in your web browser at: http://localhost or http://mykoneli.test/
+7) You can access the application in your web browser at: http://localhost
 
 ## Useful Links
 
