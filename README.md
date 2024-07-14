@@ -3,6 +3,25 @@
 ## Installation
 
 1) Run Docker Desktop
+
+2) Navigate to the application directory in your terminal and run:
+```
+./install.sh
+```
+
+3) You can access the application in your web browser at http://localhost.
+
+Backend Panel: http://localhost/backend
+```
+login: webmaster@gmail.com
+password: webmaster
+``` 
+
+
+## Installation (Manual Mode)
+
+1) Run Docker Desktop
+
 2) Navigate to the application directory in your terminal:
 ```
 cd mykoneli
@@ -42,7 +61,7 @@ cp .env.local .env
 
 ## Useful Links
 
-- PhpMyAdmin  http://localhost:8080/
+- PhpMyAdmin http://localhost:8080/
 - Mailpit http://localhost:8025/
 
 
@@ -79,7 +98,7 @@ Build and version the assets for production:
 sail npm run build
 ```
 
-Make resource for Filament:
+Make resource for Filament (Backend Panel):
 ```
 sail artisan make:filament-resource User --generate --view
 sail artisan make:filament-resource User --generate --view --soft-deletes
