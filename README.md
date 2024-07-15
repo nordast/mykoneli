@@ -11,7 +11,7 @@
 
 3) You can access the application in your web browser at http://localhost.
 
-Backend Panel: http://localhost/backend
+4) You can access the backend panel: http://localhost/backend
 ```
 login: webmaster@gmail.com
 password: webmaster
@@ -27,37 +27,42 @@ password: webmaster
 cd mykoneli
 ```
 
-3) Copy file **.env.local** to **.env**
+3) Install dependencies
+```
+composer install
+```
+
+4) Copy file **.env.local** to **.env**
 ```
 cp .env.local .env
 ```
 
-4) Start Laravel Sail:
+5) Start Laravel Sail:
 ```
 ./vendor/bin/sail up
 ```
 
-5) Once the application's Docker containers have started, you should run your application's database migrations:
+6) Once the application's Docker containers have started, you should run your application's database migrations:
 ```
 ./vendor/bin/sail artisan migrate
 ```
 
-6) \[Optional\] Seed the database with records:
+7) \[Optional\] Seed the database with records:
 ```
 ./vendor/bin/sail artisan db:seed
 ```
 
-7) Create the symbolic links configured for the application:
+8) Create the symbolic links configured for the application:
 ```
 ./vendor/bin/sail artisan storage:link
 ```
 
-8) Install frontend dependencies:
+9) Install frontend dependencies:
 ```
 ./vendor/bin/sail npm install
 ```
 
-7) You can access the application in your web browser at: http://localhost
+10) You can access the application in your web browser at: http://localhost
 
 ## Useful Links
 
