@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
+use Orchid\Attachment\Attachable;
+use Orchid\Filters\Filterable;
+use Orchid\Screen\AsSource;
 
 /**
  * @property int $id
@@ -25,7 +28,7 @@ use Illuminate\Support\Facades\Storage;
  */
 class Post extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, AsSource, Filterable, Attachable;
 
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE   = 1;
